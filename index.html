@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>  
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script>
+		function insert(num){
+
+			document.form.textview.value=document.form.textview.value+num;
+		}
+		function equal(){
+			var exp=document.form.textview.value;
+			if(exp){
+			document.form.textview.value=eval(exp)
+		}
+	}
+		function c(){
+			var exp=document.form.textview.value;
+			document.form.textview.value=exp.substring(0,exp.length-exp.length);
+
+		}
+		function back(){
+			var exp=document.form.textview.value;
+			document.form.textview.value=exp.substring(0,exp.length-1);
+		}
+	</script>
+	<style>
+	*{
+		margin:0;
+		padding: 0;
+	}
+	
+	}
+	#tab{
+		margin: 10px;
+	}
+	.textview{
+		width: 2700;
+		margin: 100;
+		font-size: 30;
+		padding: 9; 
+		cursor: pointer;
+	}
+	#zero{
+		width: 71px;
+		height: 35px;
+	}
+	#minus{
+		width: 36px;
+	}
+	#equal{
+		height: 74px;
+	}
+	#dot{
+		width: 33px;
+		height: 35px;
+	}
+	#plus{
+		height: 36px;
+		width: 36px;
+	}
+
+	.main{
+		position:relative;
+		top: 70%;
+		left: 50%;
+		margin-right: -50px;
+		margin-left: -50px;
+		margin-top: 8em;
+
+		
+	
+
+	}
+	#frm{
+		width: 150px;
+	}
+	
+	body{
+		background-image:url("bg2.jpg");
+
+		height: 100%;
+		width: 100%;
+	}
+	</style>
+</head>
+<body><br>
+
+<div class="main">
+	<h3> Welcome:D </h3> <br>
+	<h4> Let's calculate </h4>
+	<form name="form">
+		<input id="frm" class="textview" name="textview">
+	</form>	<br>
+
+	<table id="tab">
+		<tr>
+		<td><input type="button" class="btn btn-secondary" value="C"
+			onclick="c()"></td>
+		<td><input type="button" class="btn btn-danger" value="<"
+			onclick="back()"></td>
+		<td><input type="button" class="btn btn-warning" value="/"
+			onclick="insert('/')"></td>
+		<td><input type="button" class="btn btn-warning" value="X"
+			onclick="insert('*')"></td>
+	</tr>
+		<tr>
+		
+		<td><input type="button" class="btn btn-dark" value="7"
+			onclick="insert(7)"></td>
+		<td><input type="button" class="btn btn-dark" value="8"
+			onclick="insert(8)"></td>
+		<td><input type="button" class="btn btn-dark" value="9"
+			onclick="insert(9)"></td>
+		<td><input type="button" id="plus" class="btn btn-warning" value="+"
+			onclick="insert('+')"></td>
+	</tr>
+	<tr>
+		<td><input class="btn btn-dark" type="button" value="4"	onclick="insert(4)"> </td>
+		<td><input class="btn btn-dark" type="button" value="5"
+			onclick="insert(5)"></td>
+		<td><input class="btn btn-dark" type="button" value="6"
+			onclick="insert(6)"></td>
+		<td><input class="btn btn-warning" type="button" value="-" id="minus"
+			onclick="insert('-')"></td>
+	</tr>
+	<tr>
+		<td><input class="btn btn-dark" type="button" value="1" onclick="insert(1)"></td>
+		<td><input class="btn btn-dark" type="button" value="2"
+			onclick="insert(2)"></td>
+		<td><input class="btn btn-dark" type="button" value="3"
+			onclick="insert(3)">
+		</td>
+		<td rowspan="5"><input class="btn btn-success" type="button" value="=" id="equal"
+			onclick="equal()"></td>
+	</tr>
+	<tr>
+		<td colspan="2"><input class="btn btn-dark"  value="0" type="button" id="zero"
+			onclick="insert(0)"></td>
+		<td><input class="btn btn-secondary" type="button" value="." id="dot" 
+			onclick="insert('.')"></td>
+	</tr>
+
+
+		</table>
+	</form>
+</div>
+</body>
+</html>
